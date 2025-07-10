@@ -6,7 +6,6 @@ export default function MovieCard({ movie }: { movie: any }) {
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
     : "https://via.placeholder.com/500x750?text=No+Poster"
 
-  // make sure genres are in the object
   const genres = movie.genre_ids
     ? movie.genre_ids.map((id: number) => GENRE_MAP[id]).filter(Boolean)
     : movie.genres || []
