@@ -44,7 +44,7 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-              🔥 Trending Movies
+               Trending Movies
             </h1>
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
               Discover what's hot right now. The most popular movies everyone's talking about.
