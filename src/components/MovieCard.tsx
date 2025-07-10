@@ -13,7 +13,7 @@ export default function MovieCard({ movie }: { movie: any }) {
 
   const {
     stats,
-    markWatched,
+    toggleWatched,
     toggleLike,
     toggleWatchlist
   } = useUserStats()
@@ -53,7 +53,7 @@ export default function MovieCard({ movie }: { movie: any }) {
       <div className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-4 transition-opacity duration-300">
         <div className="flex justify-center space-x-2">
           <button
-            onClick={handleClick(markWatched)}
+            onClick={handleClick(toggleWatched)}
             className={`px-3 py-1.5 text-xs rounded-full border transition-all duration-200 ${
               isWatched
                 ? "bg-green-500 border-green-500 text-black font-medium"

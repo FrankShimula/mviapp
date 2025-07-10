@@ -102,14 +102,12 @@ export function useUserStats() {
     })
   }
 
-  const markWatched = (movie: Movie) => {
+  const toggleWatched = (movie: Movie) => {
     setWatchedMovies(prev => {
-      // Check if movie is already in the list
-      if (prev.find((m) => m.id === movie.id)) {
-        return prev // No change if already watched
-      }
-      
-      const newWatched = [...prev, movie]
+      const isWatched = prev.find((m) => m.id === movie.id)
+      const newWatched = isWatched
+        ? prev.filter((m) => m.id !== movie.id)
+        : [...prev, movie]
       
       // Save to localStorage if available
       if (isLocalStorageAvailable()) {
@@ -167,5 +165,5 @@ export function useUserStats() {
     })
   }
 
-  return { stats, markWatched, toggleLike, toggleWatchlist, rateMovie }
+  return { stats, toggleWatched, toggleLike, toggleWatchlist, rateMovie }
 }
